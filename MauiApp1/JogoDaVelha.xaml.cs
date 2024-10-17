@@ -20,19 +20,42 @@ public partial class JogoDaVelha : ContentPage
 
         botao.Text = vez;
 
-        vez = vez.Equals("X") ? "O" : "X";
-        VitoriaX();
+        if (!Vitoria("X"))
+        {
+            if (!Vitoria("O"))
+            {
+                if (!btn10.IsEnabled &&
+                   !btn11.IsEnabled &&
+                   !btn12.IsEnabled)
+                {
+                    DisplayAlert("Empate", "Deu Velha!", "Jogar novamente");
 
+                    Zerar();
+                }
+            }
+        }
+
+        vez = vez.Equals("X") ? "O" : "X";
     }
 
-    private void VitoriaX()
+    private bool Vitoria(string jogador)
     {
-        if (btn10.Text.Equals("X") && btn11.Text == "X" && btn12.Text == "X")
+        //1ª condição de vitória X
+        if (btn10.Text == jogador && btn11.Text == jogador && btn12.Text == jogador)
         {
-            DisplayAlert("Parabéns", "Vitória do Jogador X", "Jogar novamente");
+            DisplayAlert("Parabéns", $"Vitória do Jogador {jogador}", "Jogar novamente");
 
             Zerar();
+            return true;
         }
+
+
+
+
+
+
+        return false;
+        
     }
 
     private void Zerar()
