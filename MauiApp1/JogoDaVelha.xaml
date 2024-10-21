@@ -10,14 +10,12 @@
         </LinearGradientBrush>
     </ContentPage.Background>
     <ContentPage.Resources>
-        <ResourceDictionary>
             <Style TargetType="Label">
-                <Setter Property="TextColor" Value="Red" />
-                <Setter Property="FontSize" Value="20" />
-                <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="50" />
+            <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
-        </ResourceDictionary>
         <Style TargetType="Button">
             <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="CornerRadius" Value="15" />
